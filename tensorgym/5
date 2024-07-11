@@ -1,0 +1,7 @@
+import torch
+
+def solution(student_answers: torch.Tensor, question_points: torch.Tensor) -> torch.Tensor:
+    result = None
+    ###### your code here: #####
+    result = (student_answers * question_points).sum(1).argmax()
+    return result

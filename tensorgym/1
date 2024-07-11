@@ -1,0 +1,7 @@
+import torch
+
+def flatten(x: torch.Tensor) -> torch.Tensor:
+    result = None
+    ###### your code here: ##### 
+    result = x.view(-1)
+    return result

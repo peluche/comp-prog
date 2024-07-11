@@ -1,0 +1,20 @@
+import torch
+
+def mse_loss(input_tensor: torch.Tensor, target_tensor: torch.Tensor) -> torch.Tensor:
+    """
+    Compute the Mean Squared Error (MSE) loss between two tensors.
+
+    This function supports tensors of any dimensionality, as long as the input_tensor
+    and target_tensor have the same shape.
+
+    Args:
+    input_tensor (torch.Tensor): The tensor holding the predicted values.
+    target_tensor (torch.Tensor): The tensor holding the true values.
+
+    Returns:
+    torch.Tensor: A scalar tensor containing the mean squared error between the input and target tensors.
+    """
+    mse = None
+    ###### your code here: #####
+    mse = ((input_tensor - target_tensor)**2).mean()
+    return mse

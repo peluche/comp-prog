@@ -1,0 +1,6 @@
+import torch
+
+def solution(data: torch.Tensor) -> torch.Tensor:
+    ###### your code here: ##### 
+    data = ((data - data.mean())**2).mean()
+    return data

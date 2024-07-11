@@ -1,0 +1,7 @@
+import torch
+
+def solution(matrix: torch.Tensor) -> torch.Tensor:
+    result = None
+    ###### your code here: ##### 
+    result = matrix[::2].sum(1).T
+    return result

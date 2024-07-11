@@ -1,0 +1,8 @@
+import torch
+import torch.nn.functional as F
+
+def solution(scores: torch.Tensor) -> torch.Tensor:
+    result = None
+    ###### your code here: #####
+    result = (scores.softmax(0) > 0.3).sum(0)
+    return result

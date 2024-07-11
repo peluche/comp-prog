@@ -1,0 +1,10 @@
+import torch
+
+def solution(x: torch.Tensor) -> torch.Tensor:
+    '''
+        x is one-dimentional tensor
+    '''
+    result = None
+    ###### your code here: #####
+    result = x.view(2, -1).T
+    return result

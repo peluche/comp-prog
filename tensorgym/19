@@ -1,0 +1,15 @@
+import torch
+from itertools import product
+
+def optimal_rotation(A:torch.Tensor, B:torch.Tensor) -> torch.Tensor:
+  result = None
+  ### your code here ###
+  result = (A * B).sum()
+  for i in range(4):
+    cube = A.rot90(k=i, dims=[0, 1])
+    for j in range(4):
+      c2 = cube.rot90(k=j, dims=[1, 2])
+      for k in range(4):
+        c3 = c2.rot90(k=k, dims=[0, 2])
+        result = torch.max(result, (c3 * B).sum())
+  return result

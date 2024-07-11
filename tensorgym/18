@@ -1,0 +1,16 @@
+import torch
+
+def drop_column(A: torch.tensor) -> torch.tensor:
+    """
+    Drops the column of A containing the most 0 values.
+
+    Parameters:
+        tensor: A 2D tensor.
+    Returns:
+        tensor: The input tensor with the column containing the most 0 values removed.
+    """
+    result = None
+    ### your code here ###
+    col = (A == 0).sum(0).argmax()
+    result = torch.cat((A[:, :col], A[:, col+1:]), dim=-1)
+    return result

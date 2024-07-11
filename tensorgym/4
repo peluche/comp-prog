@@ -1,0 +1,17 @@
+import torch
+
+def solution(x: torch.Tensor) -> torch.Tensor:
+    """
+    Computes the mean for each row of the 2D tensor and 
+    returns the index of the row with the highest mean value.
+
+    Parameters:
+    - tensor: A 2D tensor.
+
+    Returns:
+    - int: Index of the row with the highest mean.
+    """
+    result = None
+    ###### your code here: #####
+    result = x.sum(1).argmax()
+    return result

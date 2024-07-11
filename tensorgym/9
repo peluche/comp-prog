@@ -1,0 +1,7 @@
+import torch
+
+def solution(data: torch.Tensor, epsilon) -> torch.Tensor:
+    result = None
+    ###### your code here: #####
+    result = (data - data.mean(dim=0)) / (data.var(dim=0) + epsilon)**0.5
+    return result

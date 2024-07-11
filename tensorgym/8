@@ -1,0 +1,11 @@
+import torch
+import math
+import torch.nn.functional as F
+
+def attention(query: torch.Tensor, key: torch.Tensor, value: torch.Tensor) -> torch.Tensor:
+    result = None
+    ###### your code here: ##### 
+    attn = (query @ key.T) / (query.shape[-1]**0.5)
+    attn = attn.softmax(dim=1)
+    result = attn @ value
+    return result
